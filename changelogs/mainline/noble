@@ -1,3 +1,9 @@
+python3.15 (3.15.0~a0-1+noble1) noble; urgency=medium
+
+  * bump changelog
+
+ -- Anthony Sottile <asottile@umich.edu>  Fri, 23 May 2025 14:04:56 -0400
+
 python3.14 (3.14.0~b1-1+noble1) noble; urgency=medium
 
   * Update to v3.14.0b1.
