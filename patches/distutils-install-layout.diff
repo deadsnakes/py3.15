@@ -229,10 +229,10 @@ index b89d742..908ce44 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 4a0f895..8dcc253 100755
+index 94a0b81..d99a765 100755
 --- a/configure
 +++ b/configure
-@@ -26765,11 +26765,11 @@ fi
+@@ -26767,11 +26767,11 @@ fi
  
  
  
@@ -246,7 +246,7 @@ index 4a0f895..8dcc253 100755
  
  PLATLIBDIR="lib"
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for --with-platlibdir" >&5
-@@ -26788,7 +26788,7 @@ then
+@@ -26790,7 +26790,7 @@ then
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  printf "%s\n" "yes" >&6; }
    PLATLIBDIR="$withval"
@@ -255,7 +255,7 @@ index 4a0f895..8dcc253 100755
  else
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
  printf "%s\n" "no" >&6; }
-@@ -26803,9 +26803,9 @@ fi
+@@ -26805,9 +26805,9 @@ fi
  
  
  if test x$PLATFORM_TRIPLET = x; then
@@ -268,10 +268,10 @@ index 4a0f895..8dcc253 100755
  
  
 diff --git a/configure.ac b/configure.ac
-index 10d7a0c..f35eef0 100644
+index ade71bc..5a6b507 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -6350,11 +6350,11 @@ fi
+@@ -6351,11 +6351,11 @@ fi
  
  
  AC_SUBST([BINLIBDEST])
@@ -285,7 +285,7 @@ index 10d7a0c..f35eef0 100644
  AC_SUBST([PLATLIBDIR])
  PLATLIBDIR="lib"
  AC_MSG_CHECKING([for --with-platlibdir])
-@@ -6373,7 +6373,7 @@ if test -n "$withval" -a "$withval" != yes -a "$withval" != no
+@@ -6374,7 +6374,7 @@ if test -n "$withval" -a "$withval" != yes -a "$withval" != no
  then
    AC_MSG_RESULT([yes])
    PLATLIBDIR="$withval"
@@ -294,7 +294,7 @@ index 10d7a0c..f35eef0 100644
  else
    AC_MSG_RESULT([no])
  fi],
-@@ -6383,9 +6383,9 @@ fi],
+@@ -6384,9 +6384,9 @@ fi],
  dnl define LIBPL after ABIFLAGS and LDVERSION is defined.
  AC_SUBST([PY_ENABLE_SHARED])
  if test x$PLATFORM_TRIPLET = x; then
