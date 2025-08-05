@@ -268,7 +268,7 @@ index 74df430..8c6da4d 100755
  
  
 diff --git a/configure.ac b/configure.ac
-index 29e36f2..2799fd2 100644
+index c526ba5..fa7e1d4 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6354,11 +6354,11 @@ fi
