@@ -176,10 +176,10 @@ index c583b74..f98b5f1 100644
  
  def get_preferred_scheme(key):
 diff --git a/Lib/test/test_site.py b/Lib/test/test_site.py
-index d0e3294..b34ac89 100644
+index 39c451f..65812e7 100644
 --- a/Lib/test/test_site.py
 +++ b/Lib/test/test_site.py
-@@ -326,16 +326,16 @@ def test_getsitepackages(self):
+@@ -328,16 +328,16 @@ def test_getsitepackages(self):
          if os.sep == '/':
              # OS X, Linux, FreeBSD, etc
              if sys.platlibdir != "lib":
