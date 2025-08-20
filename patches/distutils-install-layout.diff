@@ -176,7 +176,7 @@ index c583b74..f98b5f1 100644
  
  def get_preferred_scheme(key):
 diff --git a/Lib/test/test_site.py b/Lib/test/test_site.py
-index 39c451f..65812e7 100644
+index 32fcf31..2930f78 100644
 --- a/Lib/test/test_site.py
 +++ b/Lib/test/test_site.py
 @@ -328,16 +328,16 @@ def test_getsitepackages(self):
@@ -213,7 +213,7 @@ index bcf1965..9842462 100644
  CONFINCLUDEPY=	$(CONFINCLUDEDIR)/python$(LDVERSION)
  
 diff --git a/Modules/getpath.py b/Modules/getpath.py
-index b89d742..908ce44 100644
+index ceb605a..de3a8e2 100644
 --- a/Modules/getpath.py
 +++ b/Modules/getpath.py
 @@ -179,9 +179,9 @@
@@ -229,7 +229,7 @@ index b89d742..908ce44 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 451f72f..7cbaf78 100755
+index 568db406..e2da0a3 100755
 --- a/configure
 +++ b/configure
 @@ -26788,11 +26788,11 @@ fi
@@ -268,7 +268,7 @@ index 451f72f..7cbaf78 100755
  
  
 diff --git a/configure.ac b/configure.ac
-index f0e9eb2..5d19dd4 100644
+index bbaff7f..2e1af3e 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6371,11 +6371,11 @@ fi
