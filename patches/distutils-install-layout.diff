@@ -200,7 +200,7 @@ index 32fcf31..2930f78 100644
          else:
              # other platforms
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 244e25c..7d79dbf 100644
+index 987d55a..69f1dc6 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
 @@ -166,7 +166,7 @@ WHEEL_PKG_DIR=	@WHEEL_PKG_DIR@
@@ -229,7 +229,7 @@ index ceb605a..de3a8e2 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 0d1f6a2..cf2203d 100755
+index d80340e..8173bc3 100755
 --- a/configure
 +++ b/configure
 @@ -26807,11 +26807,11 @@ fi
@@ -268,7 +268,7 @@ index 0d1f6a2..cf2203d 100755
  
  
 diff --git a/configure.ac b/configure.ac
-index 7b5da6e..643a031 100644
+index 1e0c0f7..3cbb996 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6376,11 +6376,11 @@ fi
