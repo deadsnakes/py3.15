@@ -26,7 +26,7 @@ index 5f68a9c..060d792 100644
              object.__name__ not in ('xml.etree', 'test.test_pydoc.pydoc_mod')):
              if docloc.startswith(("http://", "https://")):
 diff --git a/Lib/site.py b/Lib/site.py
-index f932719..4c0fdd7 100644
+index f0e74ee..7c01cb6 100644
 --- a/Lib/site.py
 +++ b/Lib/site.py
 @@ -7,12 +7,18 @@
@@ -75,7 +75,7 @@ index f932719..4c0fdd7 100644
              sitepackages.append(prefix)
              sitepackages.append(os.path.join(prefix, "Lib", "site-packages"))
 diff --git a/Lib/sysconfig/__init__.py b/Lib/sysconfig/__init__.py
-index 7374bde..25a7883 100644
+index 8ff9c99..25171d7 100644
 --- a/Lib/sysconfig/__init__.py
 +++ b/Lib/sysconfig/__init__.py
 @@ -27,8 +27,8 @@
