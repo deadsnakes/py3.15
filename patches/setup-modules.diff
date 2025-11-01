@@ -7,10 +7,10 @@ Subject: setup-modules
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/Modules/Setup b/Modules/Setup
-index a066982..8d6eea3 100644
+index 8a54c0a..6f2efd3 100644
 --- a/Modules/Setup
 +++ b/Modules/Setup
-@@ -161,8 +161,8 @@ PYTHONPATH=$(COREPYTHONPATH)
+@@ -162,8 +162,8 @@ PYTHONPATH=$(COREPYTHONPATH)
  #_sysconfig _sysconfig.c
  
  # XML
@@ -21,7 +21,7 @@ index a066982..8d6eea3 100644
  
  # hashing builtins
  #_blake2 blake2module.c
-@@ -195,7 +195,7 @@ PYTHONPATH=$(COREPYTHONPATH)
+@@ -196,7 +196,7 @@ PYTHONPATH=$(COREPYTHONPATH)
  # Modules that require external libraries.
  
  #_bz2 _bz2module.c -lbz2
@@ -30,7 +30,7 @@ index a066982..8d6eea3 100644
  # The _dbm module supports NDBM, GDBM with compat module, and Berkeley DB.
  #_dbm _dbmmodule.c -lgdbm_compat -DUSE_GDBM_COMPAT
  #_gdbm _gdbmmodule.c -lgdbm
-@@ -209,8 +209,8 @@ PYTHONPATH=$(COREPYTHONPATH)
+@@ -210,8 +210,8 @@ PYTHONPATH=$(COREPYTHONPATH)
  #readline readline.c -lreadline -ltermcap
  
  # OpenSSL bindings
