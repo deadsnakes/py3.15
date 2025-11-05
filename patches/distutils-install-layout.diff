@@ -229,7 +229,7 @@ index ceb605a..de3a8e2 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 6052149..3fff6a5 100755
+index 8463b5b..cae27ba 100755
 --- a/configure
 +++ b/configure
 @@ -26897,11 +26897,11 @@ fi
@@ -268,7 +268,7 @@ index 6052149..3fff6a5 100755
  
  
 diff --git a/configure.ac b/configure.ac
-index 135492d..f1d5417 100644
+index df94ae2..cf4cf4e 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6402,11 +6402,11 @@ fi
