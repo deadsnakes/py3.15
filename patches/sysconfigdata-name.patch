@@ -28,10 +28,10 @@ index 1b29704..a45a9eb 100644
  
  
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 22a0ab5..1096cc0 100644
+index 95162cf..473746b 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
-@@ -2820,8 +2820,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
+@@ -2825,8 +2825,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
  			esac; \
  		done; \
  	done
@@ -42,10 +42,10 @@ index 22a0ab5..1096cc0 100644
 +	$(LN) -s _sysconfigdata_$(ABIFLAGS)_$(MULTIARCH).py $(DESTDIR)$(LIBDEST)/_sysconfigdata_$(ABIFLAGS)_$(MACHDEP)_$(MULTIARCH).py; \
 +	$(LN) -s _sysconfig_vars_$(ABIFLAGS)_$(MULTIARCH).json $(DESTDIR)$(LIBDEST)/_sysconfig_vars_$(ABIFLAGS)_$(MACHDEP)_$(MULTIARCH).json; \
  	$(INSTALL_DATA) `cat pybuilddir.txt`/build-details.json $(DESTDIR)$(LIBDEST); \
+ 	$(INSTALL_DATA) `cat pybuilddir.txt`/_missing_stdlib_info.py $(DESTDIR)$(LIBDEST); \
  	$(INSTALL_DATA) $(srcdir)/LICENSE $(DESTDIR)$(LIBDEST)/LICENSE.txt
- 	@ # If app store compliance has been configured, apply the patch to the
 diff --git a/configure.ac b/configure.ac
-index d1769d9..147a45f 100644
+index c2be5d8..aa46805 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -164,7 +164,7 @@ AC_ARG_WITH([build-python],
