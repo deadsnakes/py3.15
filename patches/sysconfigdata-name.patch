@@ -28,10 +28,10 @@ index 1b29704..a45a9eb 100644
  
  
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index aa4fc92..8771e9e 100644
+index bdeb945..5538e1c 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
-@@ -2828,8 +2828,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
+@@ -2829,8 +2829,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
  			esac; \
  		done; \
  	done
@@ -45,7 +45,7 @@ index aa4fc92..8771e9e 100644
  	$(INSTALL_DATA) `cat pybuilddir.txt`/_missing_stdlib_info.py $(DESTDIR)$(LIBDEST); \
  	$(INSTALL_DATA) $(srcdir)/LICENSE $(DESTDIR)$(LIBDEST)/LICENSE.txt
 diff --git a/configure.ac b/configure.ac
-index 37a2835..b55a144 100644
+index e9b7956..b72317c 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -164,7 +164,7 @@ AC_ARG_WITH([build-python],
