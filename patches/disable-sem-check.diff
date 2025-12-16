@@ -9,7 +9,7 @@ Subject: disable-sem-check
  1 file changed, 22 insertions(+), 12 deletions(-)
 
 diff --git a/configure.ac b/configure.ac
-index 0f202b5..e9b7956 100644
+index 560f8a3..f6301ea 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6226,12 +6226,17 @@ AC_CACHE_CHECK([whether POSIX semaphores are enabled], [ac_cv_posix_semaphores_e

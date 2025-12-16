@@ -7,26 +7,25 @@ Subject: distutils-install-layout
  Lib/site.py               | 26 ++++++++++++++++----
  Lib/sysconfig/__init__.py | 62 ++++++++++++++++++++++++++++++++++++++---------
  Lib/test/test_site.py     |  6 ++---
- Makefile.pre.in           |  2 +-
  Modules/getpath.py        |  4 +--
- configure                 | 10 ++++----
- configure.ac              | 10 ++++----
- 8 files changed, 88 insertions(+), 33 deletions(-)
+ configure                 |  6 ++---
+ configure.ac              |  6 ++---
+ 7 files changed, 83 insertions(+), 28 deletions(-)
 
 diff --git a/Lib/pydoc.py b/Lib/pydoc.py
-index 232e6ad..3f5622c 100644
+index c2564d4..cf4ca9c 100644
 --- a/Lib/pydoc.py
 +++ b/Lib/pydoc.py
-@@ -495,6 +495,7 @@ def getdocloc(self, object, basedir=sysconfig.get_path('stdlib')):
-                                  'marshal', 'posix', 'signal', 'sys',
-                                  '_thread', 'zipimport') or
-              (file.startswith(basedir) and
-+              not file.startswith(os.path.join(basedir, 'dist-packages')) and
-               not file.startswith(os.path.join(basedir, 'site-packages')))) and
-             object.__name__ not in ('xml.etree', 'test.test_pydoc.pydoc_mod')):
-             if docloc.startswith(("http://", "https://")):
+@@ -523,6 +523,7 @@ def _is_stdlib_module(self, object, basedir=None):
+                                      'marshal', 'posix', 'signal', 'sys',
+                                      '_thread', 'zipimport')
+                 or (file.startswith(basedir) and
++                 not file.startswith(os.path.join(basedir, 'dist-packages')) and
+                  not file.startswith(os.path.join(basedir, 'site-packages')))))
+ 
+ # -------------------------------------------- HTML documentation generator
 diff --git a/Lib/site.py b/Lib/site.py
-index 7c68107..3eb7be4 100644
+index 1b7a656..4efc730 100644
 --- a/Lib/site.py
 +++ b/Lib/site.py
 @@ -7,12 +7,18 @@
@@ -49,7 +48,7 @@ index 7c68107..3eb7be4 100644
  If a file named "pyvenv.cfg" exists one directory above sys.executable,
  sys.prefix and sys.exec_prefix are set to that directory and
  it is also checked for site-packages (sys.base_prefix and
-@@ -411,10 +417,20 @@ def getsitepackages(prefixes=None):
+@@ -407,10 +413,20 @@ def getsitepackages(prefixes=None):
                  libdirs.append("lib")
  
              for libdir in libdirs:
@@ -176,7 +175,7 @@ index 8ff9c99..25171d7 100644
  
  def get_preferred_scheme(key):
 diff --git a/Lib/test/test_site.py b/Lib/test/test_site.py
-index 27ae353..c462f35 100644
+index e7dc5e2..6e73fa0 100644
 --- a/Lib/test/test_site.py
 +++ b/Lib/test/test_site.py
 @@ -328,16 +328,16 @@ def test_getsitepackages(self):
@@ -199,19 +198,6 @@ index 27ae353..c462f35 100644
              self.assertEqual(dirs[-1], wanted)
          else:
              # other platforms
-diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 2554114..0a1f2de 100644
---- a/Makefile.pre.in
-+++ b/Makefile.pre.in
-@@ -166,7 +166,7 @@ WHEEL_PKG_DIR=	@WHEEL_PKG_DIR@
- 
- # Detailed destination directories
- BINLIBDEST=	@BINLIBDEST@
--LIBDEST=	$(SCRIPTDIR)/python$(VERSION)$(ABI_THREAD)
-+LIBDEST=	$(SCRIPTDIR)/python$(VERSION)
- INCLUDEPY=	$(INCLUDEDIR)/python$(LDVERSION)
- CONFINCLUDEPY=	$(CONFINCLUDEDIR)/python$(LDVERSION)
- 
 diff --git a/Modules/getpath.py b/Modules/getpath.py
 index ceb605a..de3a8e2 100644
 --- a/Modules/getpath.py
@@ -229,80 +215,50 @@ index ceb605a..de3a8e2 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 4f9b9b2..794696c 100755
+index a1bc799..fc132b0 100755
 --- a/configure
 +++ b/configure
-@@ -26944,11 +26944,11 @@ fi
- 
- 
- 
--BINLIBDEST='$(LIBDIR)/python$(VERSION)$(ABI_THREAD)'
-+BINLIBDEST='$(LIBDIR)/python$(VERSION)'
- 
+@@ -26944,7 +26944,7 @@ if test "$ac_sys_system" = "iOS"; then
+ fi
  
  # Check for --with-platlibdir
 -# /usr/$PLATLIBDIR/python$(VERSION)$(ABI_THREAD)
 +# /usr/$PLATLIBDIR/python$(VERSION)
  
- PLATLIBDIR="lib"
+ PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for --with-platlibdir" >&5
-@@ -26967,7 +26967,7 @@ then
-   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- printf "%s\n" "yes" >&6; }
-   PLATLIBDIR="$withval"
--  BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)$(ABI_THREAD)'
-+  BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)'
- else
-   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
- printf "%s\n" "no" >&6; }
-@@ -26982,9 +26982,9 @@ fi
+@@ -26976,8 +26976,8 @@ fi
+ 
+ 
+ 
+-LIBDEST='${prefix}/${PLATLIBDIR}/python$(VERSION)$(ABI_THREAD)'
+-BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)$(ABI_THREAD)'
++LIBDEST='${prefix}/${PLATLIBDIR}/python$(VERSION)'
++BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)'
  
  
  if test x$PLATFORM_TRIPLET = x; then
--  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}${ABI_THREAD}/config-${LDVERSION}"
-+  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}/config-${LDVERSION}"
- else
--  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}${ABI_THREAD}/config-${LDVERSION}-${PLATFORM_TRIPLET}"
-+  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}/config-${LDVERSION}-${PLATFORM_TRIPLET}"
- fi
- 
- 
 diff --git a/configure.ac b/configure.ac
-index 046c046..ce9d484 100644
+index a284a11..5300374 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -6422,11 +6422,11 @@ fi
- 
- 
- AC_SUBST([BINLIBDEST])
--BINLIBDEST='$(LIBDIR)/python$(VERSION)$(ABI_THREAD)'
-+BINLIBDEST='$(LIBDIR)/python$(VERSION)'
- 
+@@ -6421,7 +6421,7 @@ if test "$ac_sys_system" = "iOS"; then
+ fi
  
  # Check for --with-platlibdir
 -# /usr/$PLATLIBDIR/python$(VERSION)$(ABI_THREAD)
 +# /usr/$PLATLIBDIR/python$(VERSION)
  AC_SUBST([PLATLIBDIR])
- PLATLIBDIR="lib"
+ PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  AC_MSG_CHECKING([for --with-platlibdir])
-@@ -6445,7 +6445,7 @@ if test -n "$withval" -a "$withval" != yes -a "$withval" != no
- then
-   AC_MSG_RESULT([yes])
-   PLATLIBDIR="$withval"
--  BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)$(ABI_THREAD)'
-+  BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)'
- else
-   AC_MSG_RESULT([no])
- fi],
-@@ -6455,9 +6455,9 @@ fi],
+@@ -6447,8 +6447,8 @@ fi],
+ 
+ AC_SUBST([LIBDEST])
+ AC_SUBST([BINLIBDEST])
+-LIBDEST='${prefix}/${PLATLIBDIR}/python$(VERSION)$(ABI_THREAD)'
+-BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)$(ABI_THREAD)'
++LIBDEST='${prefix}/${PLATLIBDIR}/python$(VERSION)'
++BINLIBDEST='${exec_prefix}/${PLATLIBDIR}/python$(VERSION)'
+ 
  dnl define LIBPL after ABIFLAGS and LDVERSION is defined.
  AC_SUBST([PY_ENABLE_SHARED])
- if test x$PLATFORM_TRIPLET = x; then
--  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}${ABI_THREAD}/config-${LDVERSION}"
-+  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}/config-${LDVERSION}"
- else
--  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}${ABI_THREAD}/config-${LDVERSION}-${PLATFORM_TRIPLET}"
-+  LIBPL='$(prefix)'"/${PLATLIBDIR}/python${VERSION}/config-${LDVERSION}-${PLATFORM_TRIPLET}"
- fi
- AC_SUBST([LIBPL])
- 
