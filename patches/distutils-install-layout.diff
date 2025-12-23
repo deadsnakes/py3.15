@@ -13,10 +13,10 @@ Subject: distutils-install-layout
  7 files changed, 83 insertions(+), 28 deletions(-)
 
 diff --git a/Lib/pydoc.py b/Lib/pydoc.py
-index c2564d4..cf4ca9c 100644
+index a2da5cb..0cf5b77 100644
 --- a/Lib/pydoc.py
 +++ b/Lib/pydoc.py
-@@ -523,6 +523,7 @@ def _is_stdlib_module(self, object, basedir=None):
+@@ -533,6 +533,7 @@ def _is_stdlib_module(self, object, basedir=None):
                                       'marshal', 'posix', 'signal', 'sys',
                                       '_thread', 'zipimport')
                  or (file.startswith(basedir) and
@@ -215,10 +215,10 @@ index ceb605a..de3a8e2 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index a1bc799..fc132b0 100755
+index b1faeaf..9212549 100755
 --- a/configure
 +++ b/configure
-@@ -26944,7 +26944,7 @@ if test "$ac_sys_system" = "iOS"; then
+@@ -26962,7 +26962,7 @@ if test "$ac_sys_system" = "iOS"; then
  fi
  
  # Check for --with-platlibdir
@@ -227,7 +227,7 @@ index a1bc799..fc132b0 100755
  
  PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for --with-platlibdir" >&5
-@@ -26976,8 +26976,8 @@ fi
+@@ -26994,8 +26994,8 @@ fi
  
  
  
@@ -239,10 +239,10 @@ index a1bc799..fc132b0 100755
  
  if test x$PLATFORM_TRIPLET = x; then
 diff --git a/configure.ac b/configure.ac
-index a284a11..5300374 100644
+index 043ec95..b67c817 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -6421,7 +6421,7 @@ if test "$ac_sys_system" = "iOS"; then
+@@ -6433,7 +6433,7 @@ if test "$ac_sys_system" = "iOS"; then
  fi
  
  # Check for --with-platlibdir
@@ -251,7 +251,7 @@ index a284a11..5300374 100644
  AC_SUBST([PLATLIBDIR])
  PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  AC_MSG_CHECKING([for --with-platlibdir])
-@@ -6447,8 +6447,8 @@ fi],
+@@ -6459,8 +6459,8 @@ fi],
  
  AC_SUBST([LIBDEST])
  AC_SUBST([BINLIBDEST])
