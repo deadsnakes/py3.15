@@ -1,3 +1,9 @@
+python3.15 (3.15.0~a4-242-g2873c31edf-1+jammy1) jammy; urgency=medium
+
+  * Update to v3.15.0a4-242-g2873c31edf.
+
+ -- Anthony Sottile <asottile@umich.edu>  Wed, 14 Jan 2026 20:34:35 +0000
+
 python3.15 (3.15.0~a3-311-gcbf9b8cc08-1+jammy1) jammy; urgency=medium
 
   * Update to v3.15.0a3-311-gcbf9b8cc08.
