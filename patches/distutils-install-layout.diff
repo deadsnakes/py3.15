@@ -13,10 +13,10 @@ Subject: distutils-install-layout
  7 files changed, 83 insertions(+), 28 deletions(-)
 
 diff --git a/Lib/pydoc.py b/Lib/pydoc.py
-index e54ff63..b7b31ee 100644
+index 316702a..84f07ef 100644
 --- a/Lib/pydoc.py
 +++ b/Lib/pydoc.py
-@@ -533,6 +533,7 @@ def _is_stdlib_module(self, object, basedir=None):
+@@ -554,6 +554,7 @@ def _is_stdlib_module(self, object, basedir=None):
                                       'marshal', 'posix', 'signal', 'sys',
                                       '_thread', 'zipimport')
                  or (file.startswith(basedir) and
@@ -25,7 +25,7 @@ index e54ff63..b7b31ee 100644
  
  # -------------------------------------------- HTML documentation generator
 diff --git a/Lib/site.py b/Lib/site.py
-index 5f09a7d..ede0f09 100644
+index 30015b3..130e078 100644
 --- a/Lib/site.py
 +++ b/Lib/site.py
 @@ -7,12 +7,18 @@
@@ -215,10 +215,10 @@ index 4dceb5c..f6a07ee 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index eca5f03..cc15344 100755
+index a3eeef3..4d6634a 100755
 --- a/configure
 +++ b/configure
-@@ -27094,7 +27094,7 @@ if test "$ac_sys_system" = "iOS"; then
+@@ -27091,7 +27091,7 @@ if test "$ac_sys_system" = "iOS"; then
  fi
  
  # Check for --with-platlibdir
@@ -227,7 +227,7 @@ index eca5f03..cc15344 100755
  
  PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for --with-platlibdir" >&5
-@@ -27126,8 +27126,8 @@ fi
+@@ -27123,8 +27123,8 @@ fi
  
  
  
@@ -239,7 +239,7 @@ index eca5f03..cc15344 100755
  
  if test x$PLATFORM_TRIPLET = x; then
 diff --git a/configure.ac b/configure.ac
-index c21024a..c7fa208 100644
+index 75e8176..1fd619d 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6497,7 +6497,7 @@ if test "$ac_sys_system" = "iOS"; then
