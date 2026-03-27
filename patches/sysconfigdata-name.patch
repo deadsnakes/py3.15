@@ -15,7 +15,7 @@ Forwarded: no
  3 files changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/Lib/sysconfig/__init__.py b/Lib/sysconfig/__init__.py
-index 6c7424d..9626a2c 100644
+index 3d3bc2b..2b41caa 100644
 --- a/Lib/sysconfig/__init__.py
 +++ b/Lib/sysconfig/__init__.py
 @@ -387,7 +387,7 @@ def _get_sysconfigdata_name():
@@ -28,7 +28,7 @@ index 6c7424d..9626a2c 100644
  
  
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index ed3f271..68b6be8 100644
+index 83bb80f..a125cbc 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
 @@ -2863,8 +2863,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
@@ -45,7 +45,7 @@ index ed3f271..68b6be8 100644
  	$(INSTALL_DATA) $(srcdir)/LICENSE $(DESTDIR)$(LIBDEST)/LICENSE.txt
  	@ # If app store compliance has been configured, apply the patch to the
 diff --git a/configure.ac b/configure.ac
-index 88c65de..582cd29 100644
+index 2293a19..32a10e5 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -164,7 +164,7 @@ AC_ARG_WITH([build-python],

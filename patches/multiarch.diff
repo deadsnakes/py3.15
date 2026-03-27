@@ -8,7 +8,7 @@ Subject: multiarch
  2 files changed, 7 insertions(+)
 
 diff --git a/Lib/sysconfig/__init__.py b/Lib/sysconfig/__init__.py
-index 702fdd5..6c7424d 100644
+index 3cd3937..3d3bc2b 100644
 --- a/Lib/sysconfig/__init__.py
 +++ b/Lib/sysconfig/__init__.py
 @@ -597,6 +597,12 @@ def _init_config_vars():
@@ -25,7 +25,7 @@ index 702fdd5..6c7424d 100644
      srcdir = _CONFIG_VARS.get('srcdir', _PROJECT_BASE)
      if os.name == 'posix':
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index 5ea0053..77e3be2 100644
+index 354580a..14695ac 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
 @@ -1972,6 +1972,7 @@ Python/interpconfig.o: $(srcdir)/Python/interpconfig.c $(srcdir)/Python/config_c
