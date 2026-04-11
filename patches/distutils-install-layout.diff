@@ -215,10 +215,10 @@ index 4dceb5c..f6a07ee 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 4726b4f..a49de49 100755
+index a599cd6..319ec70 100755
 --- a/configure
 +++ b/configure
-@@ -27164,7 +27164,7 @@ if test "$ac_sys_system" = "iOS"; then
+@@ -27165,7 +27165,7 @@ if test "$ac_sys_system" = "iOS"; then
  fi
  
  # Check for --with-platlibdir
@@ -227,7 +227,7 @@ index 4726b4f..a49de49 100755
  
  PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for --with-platlibdir" >&5
-@@ -27196,8 +27196,8 @@ fi
+@@ -27197,8 +27197,8 @@ fi
  
  
  
@@ -239,7 +239,7 @@ index 4726b4f..a49de49 100755
  
  if test x$PLATFORM_TRIPLET = x; then
 diff --git a/configure.ac b/configure.ac
-index dd86029..1f4a9b3 100644
+index d7785c6..0690399 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6518,7 +6518,7 @@ if test "$ac_sys_system" = "iOS"; then
