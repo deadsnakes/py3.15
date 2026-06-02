@@ -25,7 +25,7 @@ index 48f1dae..6e5f99f 100644
  
  # -------------------------------------------- HTML documentation generator
 diff --git a/Lib/site.py b/Lib/site.py
-index 239ee0d..669f185 100644
+index b7f5c7f..18e0338 100644
 --- a/Lib/site.py
 +++ b/Lib/site.py
 @@ -7,12 +7,18 @@
@@ -48,7 +48,7 @@ index 239ee0d..669f185 100644
  If a file named "pyvenv.cfg" exists one directory above sys.executable,
  sys.prefix and sys.exec_prefix are set to that directory and
  it is also checked for site-packages (sys.base_prefix and
-@@ -716,10 +722,20 @@ def getsitepackages(prefixes=None):
+@@ -754,10 +760,20 @@ def getsitepackages(prefixes=None):
                  libdirs.append("lib")
  
              for libdir in libdirs:
@@ -175,10 +175,10 @@ index 47415ad..cd61b26 100644
  
  def get_preferred_scheme(key):
 diff --git a/Lib/test/test_site.py b/Lib/test/test_site.py
-index e2a81b8..cc2a9db 100644
+index 5fd65ad..be565fc 100644
 --- a/Lib/test/test_site.py
 +++ b/Lib/test/test_site.py
-@@ -326,16 +326,16 @@ def test_getsitepackages(self):
+@@ -323,16 +323,16 @@ def test_getsitepackages(self):
          if os.sep == '/':
              # OS X, Linux, FreeBSD, etc
              if sys.platlibdir != "lib":
