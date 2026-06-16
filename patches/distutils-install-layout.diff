@@ -215,7 +215,7 @@ index 4dceb5c..f6a07ee 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index 7abc416..a6ed618 100755
+index 3a1c40e..6ad2b70 100755
 --- a/configure
 +++ b/configure
 @@ -27609,7 +27609,7 @@ if test "$ac_sys_system" = "iOS"; then
@@ -239,7 +239,7 @@ index 7abc416..a6ed618 100755
  
  if test x$PLATFORM_TRIPLET = x; then
 diff --git a/configure.ac b/configure.ac
-index 47a6e59..e2816ae 100644
+index 62d7611..400a44f 100644
 --- a/configure.ac
 +++ b/configure.ac
 @@ -6663,7 +6663,7 @@ if test "$ac_sys_system" = "iOS"; then
