@@ -199,12 +199,12 @@ index bcb51ed..4b2f63a 100644
          else:
              # other platforms
 diff --git a/Modules/getpath.py b/Modules/getpath.py
-index 4dceb5c..f6a07ee 100644
+index 6199567..b2c1fb2 100644
 --- a/Modules/getpath.py
 +++ b/Modules/getpath.py
-@@ -179,9 +179,9 @@
+@@ -177,9 +177,9 @@
+ if os_name == 'posix' or os_name == 'darwin':
      BUILDDIR_TXT = 'pybuilddir.txt'
-     BUILD_LANDMARK = 'Modules/Setup.local'
      DEFAULT_PROGRAM_NAME = f'python{VERSION_MAJOR}'
 -    STDLIB_SUBDIR = f'{platlibdir}/python{VERSION_MAJOR}.{VERSION_MINOR}{ABI_THREAD}'
 +    STDLIB_SUBDIR = f'{platlibdir}/python{VERSION_MAJOR}.{VERSION_MINOR}'
