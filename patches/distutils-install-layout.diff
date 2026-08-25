@@ -199,7 +199,7 @@ index bcb51ed..4b2f63a 100644
          else:
              # other platforms
 diff --git a/Modules/getpath.py b/Modules/getpath.py
-index 6199567..b2c1fb2 100644
+index c322d5c..9c08ea0 100644
 --- a/Modules/getpath.py
 +++ b/Modules/getpath.py
 @@ -177,9 +177,9 @@
