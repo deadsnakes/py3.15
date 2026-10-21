@@ -199,7 +199,7 @@ index fc5e636..2c19bb2 100644
          else:
              # other platforms
 diff --git a/Modules/getpath.py b/Modules/getpath.py
-index c322d5c..9c08ea0 100644
+index f5f928f..00d426a 100644
 --- a/Modules/getpath.py
 +++ b/Modules/getpath.py
 @@ -177,9 +177,9 @@
@@ -215,10 +215,10 @@ index c322d5c..9c08ea0 100644
      VENV_LANDMARK = 'pyvenv.cfg'
      ZIP_LANDMARK = f'{platlibdir}/python{VERSION_MAJOR}{VERSION_MINOR}{ABI_THREAD}.zip'
 diff --git a/configure b/configure
-index cab5ab8..1ae62f7 100755
+index 5a728e8..272eff4 100755
 --- a/configure
 +++ b/configure
-@@ -27699,7 +27699,7 @@ if test "$ac_sys_system" = "iOS"; then
+@@ -27750,7 +27750,7 @@ if test "$ac_sys_system" = "iOS"; then
  fi
  
  # Check for --with-platlibdir
@@ -227,7 +227,7 @@ index cab5ab8..1ae62f7 100755
  
  PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for --with-platlibdir" >&5
-@@ -27731,8 +27731,8 @@ fi
+@@ -27782,8 +27782,8 @@ fi
  
  
  
@@ -239,10 +239,10 @@ index cab5ab8..1ae62f7 100755
  
  if test x$PLATFORM_TRIPLET = x; then
 diff --git a/configure.ac b/configure.ac
-index 89d879a..7c7a713 100644
+index 08cfd62..fcdff03 100644
 --- a/configure.ac
 +++ b/configure.ac
-@@ -6693,7 +6693,7 @@ if test "$ac_sys_system" = "iOS"; then
+@@ -6698,7 +6698,7 @@ if test "$ac_sys_system" = "iOS"; then
  fi
  
  # Check for --with-platlibdir
@@ -251,7 +251,7 @@ index 89d879a..7c7a713 100644
  AC_SUBST([PLATLIBDIR])
  PLATLIBDIR="lib"  # XXX: We should probably calculate the defauly from libdir, if defined.
  AC_MSG_CHECKING([for --with-platlibdir])
-@@ -6719,8 +6719,8 @@ fi],
+@@ -6724,8 +6724,8 @@ fi],
  
  AC_SUBST([LIBDEST])
  AC_SUBST([BINLIBDEST])
