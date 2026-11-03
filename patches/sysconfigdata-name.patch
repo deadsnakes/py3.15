@@ -15,7 +15,7 @@ Forwarded: no
  3 files changed, 6 insertions(+), 4 deletions(-)
 
 diff --git a/Lib/sysconfig/__init__.py b/Lib/sysconfig/__init__.py
-index 566a745..a335a3a 100644
+index 79fecaa..157892c 100644
 --- a/Lib/sysconfig/__init__.py
 +++ b/Lib/sysconfig/__init__.py
 @@ -387,7 +387,7 @@ def _get_sysconfigdata_name():
@@ -28,10 +28,10 @@ index 566a745..a335a3a 100644
  
  
 diff --git a/Makefile.pre.in b/Makefile.pre.in
-index b779ca3..320cb6b 100644
+index 2d70e7f..e7abdb7 100644
 --- a/Makefile.pre.in
 +++ b/Makefile.pre.in
-@@ -2913,8 +2913,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
+@@ -2914,8 +2914,10 @@ libinstall:	all $(srcdir)/Modules/xxmodule.c
  			esac; \
  		done; \
  	done
