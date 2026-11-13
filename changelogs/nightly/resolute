@@ -1,3 +1,9 @@
+python3.15 (3.15.2-216-g467c18ec00-1+resolute1) resolute; urgency=medium
+
+  * Update to v3.15.2-216-g467c18ec00.
+
+ -- Anthony Sottile (deadsnakes) <asottile+deadsnakes@umich.edu>  Fri, 13 Nov 2026 16:44:17 +0000
+
 python3.15 (3.15.2-205-g27efd65ec7-1+resolute1) resolute; urgency=medium
 
   * Update to v3.15.2-205-g27efd65ec7.
